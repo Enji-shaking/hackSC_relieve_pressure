@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    function goto(){
+    alert("you mission is not completed");
+    window.location.assign('main(logged unload).html');
+    }
+
+    function winMessage()
+    {
+       alert("you win");
+       window.location.assign('main(logged unload).html');
+    }
+
+   function daojishi()    {
+      document.getElementById("id2").style.display = 'block';
+      var starttime=document.getElementById("id2").innerText;
+      if(starttime == 0)
+      {
+         winMessage();
+      }
+      setTimeout("daojishi()",100);
+      starttime--;
+      document.getElementById("id2").innerText=starttime;
+   }
+
+   function myFunction(){
+   setTimeout(function(){myFunction2()},3000);
+   }
+</script>
+<style>
+   .content{text-align: center;
+      margin-top: 300px;
+      font-size: 30pt;
+   }
+   body{
+      background-image:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3423581184,2302286429&fm=26&gp=0.jpg);
+      background-size: cover;
+      color: light green;
+   }
+
+
+</style>
+</head>
+<body onload="daojishi()">
+<div class="content">
+   <p onmousemove="goto()" style="height: 100px; width: 1500px; text-align: bottom; margin-left: 105px;">
+      Enjoy the Green and Air<br><br>
+      Do Not Move Your Mouse From Now On <br>
+      <br>See You~
+
+   </p >
+      <p id="id2" style="margin-top: 150px;"> 16 </p >
+</div>
+
+</body>
+</html>

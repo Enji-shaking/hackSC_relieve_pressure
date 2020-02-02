@@ -1,0 +1,212 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="main.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Better Workplace</title>
+
+  <script>
+// Notification.requestPermission().then(function(permission) {
+//     if(permission === 'granted'){
+//         console.log('用户允许通知');
+//     }else if(permission === 'denied'){
+//         console.log('用户拒绝通知');
+//     }
+//     });
+
+
+
+function daojishi()    {
+      document.getElementById("id2").style.display = 'block';
+      var starttime=document.getElementById("id2").innerText;
+      if(starttime == 0)
+      {
+
+      //window.open('http://www.google.com','_blank')
+      // window.open('challenge_main.html');
+      window.location.assign('challenge_main.html');
+// // var n = new Notification('Tired? Need a Break?',{
+//          body: '',
+//          silent: false,
+//         vibrate: [300, 100, 200, 100, 100],
+//       noscreen: false,
+//       sticky: true,
+//       requireInteraction: true,
+//          data: {
+//                url: 'challenge_main.html'
+//          }
+//          })
+//             n.onclick = function(){
+//                window.open(n.data.url, '_blank');      // 打开网址
+//                n.close();
+//          }
+//          n.onclose = function(){
+//          n.close();
+//          }
+      return;
+      }
+      setTimeout("daojishi()",200); //count down faster
+      starttime--;
+      document.getElementById("id2").innerText=starttime;
+}
+
+
+    function myFunction(){
+        setTimeout(function(){myFunction2()},3000);
+      }
+    function myFunction2() {
+        if (confirm("Do you want to start a game?")) {
+          txt = "Yes";
+          window.location.href='google.com';
+
+        } else {
+          txt = "No";
+        }
+        document.getElementByID("id2").innerHTML = "Play";
+    }
+    function jump() {
+      window.open('http://www.google.com','_blank');
+    }
+    </script>
+    <script>
+    // If user clicks anywhere outside of the modal, Modal will close
+    var modal = document.getElementById(‘modal-wrapper’);
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = “none”;
+        }
+      }
+    </script>
+
+
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Better Workplace</a>
+
+  <ul class="nav navbar-right">
+
+    </ul>
+
+<!-- The Log In Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="https://www.inbenta.com/wp-content/themes/inbenta/img/icons/avatar.svg?ver=2" alt="Avatar" class="avatar" width = 200px>
+    </div>
+
+    <div class="container2">
+      <label for="uname"><b>Email</b></label>
+      <input type="email" id = "email" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password </b></label>
+      <input type="password" id = "password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit" onclick = "window.location.assign('main.html')">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container2" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+  </form>
+</div>
+
+<!-- The Sign Up Modal -->
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="https://www.inbenta.com/wp-content/themes/inbenta/img/icons/avatar.svg?ver=2" alt="Avatar" class="avatar" width = 200px>
+    </div>
+
+    <div class="container2">
+      <label for="uname"><b>Email</b></label>
+      <input id = "email" type="email" placeholder="Enter Email" name="email"  required>
+
+      <label for="psw"><b>Password </b></label>
+      <input id = "password" type="password" placeholder="Enter Password" name="psw" required>
+
+      <button id = "btnSignup" >SignUp</button>
+
+      <button type="button" id = "btnLogin" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+
+
+
+  </form>
+</div>
+</nav>
+
+<!--从这里往上 是最上面的那个bar-->
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-lg-12">
+      <div id = "content">
+        <h1> Better Workplace </h1>
+        <h4> Getting Healthier While
+        <br> Earning Cash </h4>
+        <hr>
+        <button id="id1" type="button" class="btn btn-success" onclick="daojishi()">Finished? Restart！</button>
+        <h5 id="id2">10</h5>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<p id="demo"></p>
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAZI9tsf8KTiEtE0n_3MT1giZO1opp6h6c",
+    authDomain: "happysc-cbb3a.firebaseapp.com",
+    databaseURL: "https://happysc-cbb3a.firebaseio.com",
+    projectId: "happysc-cbb3a",
+    storageBucket: "happysc-cbb3a.appspot.com",
+    messagingSenderId: "1018784683998",
+    appId: "1:1018784683998:web:ac593d7da1ebf681912f4f",
+    measurementId: "G-G36BJM7ZZ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+</html>
